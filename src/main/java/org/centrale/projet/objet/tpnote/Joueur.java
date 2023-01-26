@@ -10,4 +10,13 @@ package org.centrale.projet.objet.tpnote;
  */
 public class Joueur {
     
+    public String nom;
+    public int role;
+    public int score;
+    
+    public Joueur(String nom,int role){
+        this.nom = nom;
+        this.role = role;
+        this.score = 0;
+    }
 }
