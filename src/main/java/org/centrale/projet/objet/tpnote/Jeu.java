@@ -119,6 +119,10 @@ public class Jeu {
         
     }
     
+    /**
+     * Cette méthode définit une manche 
+     * @param nbtour 
+     */
     public void manche(int nbtour){
         
         int n=0;
