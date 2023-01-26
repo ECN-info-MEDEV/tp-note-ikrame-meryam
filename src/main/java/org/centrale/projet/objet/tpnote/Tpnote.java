@@ -12,6 +12,7 @@ package org.centrale.projet.objet.tpnote;
 public class Tpnote {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Jeu jeu = new Jeu("Meryam","Ikrame");
+        jeu.manche(2);
     }
 }
