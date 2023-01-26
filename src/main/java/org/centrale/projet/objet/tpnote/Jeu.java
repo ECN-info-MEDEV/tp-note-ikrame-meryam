@@ -15,7 +15,7 @@ public class Jeu {
     public int[][] plateau;
     public Joueur joueur1;
     public Joueur joueur2;
-    public int[] combinaison;
+    
     
     /**
      * Cette méthode permet de 
@@ -23,14 +23,14 @@ public class Jeu {
      * @param nom2
      * @param combinaison 
      */
-    public Jeu(String nom1,String nom2,int[] combinaison){
+    public Jeu(String nom1,String nom2){
         this.plateau = new int[12][4];
         for(int[] row : plateau) {
             Arrays.fill(row, 0);
 }
         this.joueur1 = new Joueur(nom1,0);
         this.joueur2 = new Joueur(nom2,1);
-        this.combinaison = combinaison;
+        
     }
     
     /**
