@@ -4,8 +4,11 @@
  */
 package org.centrale.projet.objet.tpnote;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
- *
+ * Cette classe définit les modalités du jeu 
  * @author Meryam
  */
 public class Jeu {
@@ -14,6 +17,12 @@ public class Jeu {
     public Joueur joueur2;
     public int[] combinaison;
     
+    /**
+     * Cette méthode permet de 
+     * @param nom1
+     * @param nom2
+     * @param combinaison 
+     */
     public Jeu(String nom1,String nom2,int[] combinaison){
         this.plateau = new int[12][4];
         for(int[] row : plateau) {
@@ -23,6 +32,11 @@ public class Jeu {
         this.joueur2 = new Joueur(nom2,1);
         this.combinaison = combinaison;
     }
+    
+    /**
+     * Cette méthode permet au décodeur de deviner la combinaison
+     * @return 
+     */
     public int[] guess(){
         Scanner scanner = new Scanner(System.in);
         int[] guess = new int[4];
@@ -32,7 +46,14 @@ public class Jeu {
         }
         return guess;
     }
-    public int[] indications(int[] cominaison,int[] guess){
+    
+    /**
+     * Cette méthode permet au codeur de donner les indications au décodeur
+     * @param combinaison
+     * @param guess
+     * @return 
+     */
+    public int[] indications(int[] combinaison,int[] guess){
         
         // nous allons 
         //indications pour les pions ayant meme couleur et meme position
@@ -62,15 +83,22 @@ public class Jeu {
         return indications;
     }
     
+    /**
+     * Cette méthode permet de vérifier la combinaison du décodeur 
+     * @param combinaison
+     * @param guess
+     * @return 
+     */
     public boolean checkguess(int[] combinaison,int[] guess){
-        if (Arrays.equals(combinaison, guess)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return Arrays.equals(combinaison, guess);
     }
     
+    /**
+     * Cette méthode permet de lancer un tour de jeu 
+     * @param combinaison
+     * @param codeur
+     * @param decodeur 
+     */
     public void tourDeJeu(int[] combinaison, Joueur codeur, Joueur decodeur){
         
         int iter = 1;
