@@ -5,14 +5,14 @@
 package org.centrale.projet.objet.tpnote;
 
 /**
- *
+ * Cette classe définit le joueur (nom, role et score) 
  * @author Meryam
  */
 public class Joueur {
     
     public String nom;
-    public int role;
-    public int score;
+    public int role; //Codeur ou décodeur 
+    public int score; 
     
     public Joueur(String nom,int role){
         this.nom = nom;
