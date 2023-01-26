@@ -106,11 +106,57 @@ public class Jeu {
             int[] guess = guess();
             int[] indications = indications(combinaison,guess);
             if(checkguess(combinaison,guess)){
-                codeur.score=iter;
+                codeur.score= codeur.score + iter;
                 System.out.println("manche terminée");
+                break;
             }
+            iter = iter+1;
         }
+        if(iter==13){
+            System.out.println("manche terminée");
+            codeur.score= codeur.score + 12;
+        }
+        
     }
+    
+    public void manche(int nbtour){
+        
+        int n=0;
+        
+        while(n<nbtour){
+            
+        Scanner scanner1 = new Scanner(System.in);
+        
+        System.out.println("le codeur "+joueur1.nom+" doit choisir une combinaison");
+        
+        int[] combinaison = new int [4];
+        for(int i=0 ; i<4 ; i++){
+            System.out.println("choisir un pion");
+            combinaison[i] = scanner1.nextInt();
+        }
+        
+        System.out.println("le decodeur "+joueur2.nom+" doit deviner");
+        
+        tourDeJeu(combinaison, joueur1, joueur2);
+        
+        Scanner scanner2 = new Scanner(System.in);
+        
+        System.out.println("le codeur "+joueur2.nom+" doit choisir une combinaison");
+        
+        int[] combinaison1 = new int [4];
+        for(int i=0 ; i<4 ; i++){
+            System.out.println("choisir un pion");
+            combinaison1[i] = scanner1.nextInt();
+        }
+        System.out.println("le decodeur "+joueur1.nom+" doit deviner");
+        tourDeJeu(combinaison1, joueur2, joueur1);
+        
+        n = n + 1;
+        
+    }
+        System.out.println("manche terminée, le score de "+ joueur1.nom + "est : " + joueur1.score + 
+                "le score de "+ joueur2.nom + "est : " + joueur2.score);
         
     
-}
+}}
+
